@@ -8,10 +8,8 @@ function dd($var) {
 	die();
 }
 
-function getByName($arr, $key){
-	if (array_key_exists($key, $arr)) {
-		return $arr[$key];
-	}
+function view($path, $params=[]) {
+	extract($params);
 
-	return [];
-};
+	require $path;
+}
