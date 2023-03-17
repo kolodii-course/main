@@ -4,14 +4,14 @@
 <?php require('views/partials/banner.php')?>
 <main>
 	<div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-		<a class="text-blue-500 underline" href="/posts">Back to posts...</a>
+		<a class="text-blue-500 hover:underline" href="/posts"><-- Back to posts</a>
 	</div>
 
-	<div>
+	<div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
 		<article class="ml-10">
-			<h2><?= $post['title'] ?></h2>
+			<h2 class="text-4xl"><?= $post['title'] ?></h2>
 
-			<section>
+			<section class="mt-10">
 				<?= $post['text'] ?>
 			</section>
 		</article>
