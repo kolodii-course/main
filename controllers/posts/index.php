@@ -1,7 +1,9 @@
 
 <?php
 
-require 'Database.php';
+//require base_path('Database.php');
+
+use Core\Database;
 
 $header = 'My posts';
 
@@ -16,7 +18,7 @@ if (!empty($_GET['id'])) {
 	])->fetch();
 
 
-	view('views/pages/posts/view.php', [
+	view('pages/posts/view.php', [
 		'header' => $header,
 		'post' => $post
 	]);
@@ -25,12 +27,11 @@ if (!empty($_GET['id'])) {
 	// show list of posts
 	$posts = $db->query('select * from posts')->fetchAll();
 
-//	$posts = $statement->fetchAll();
-
-	view('views/pages/posts/index.php', [
+	view('pages/posts/index.php', [
 		'header' => $header,
 		'posts' => $posts
 	]);
+
 }
 
 

@@ -2,4 +2,4 @@
 
 $header = 'Contact';
 
-require ('views/pages/contact.php');
+require base_path('views/pages/contact.php');

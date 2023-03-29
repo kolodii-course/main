@@ -1,3 +1,3 @@
 <?php $header = 'Home page';
 
-require ('views/pages/index.php');
+require base_path('views/pages/index.php');

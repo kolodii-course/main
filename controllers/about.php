@@ -3,4 +3,4 @@
 
 $header = 'About us';
 
-require ('views/pages/about.php');
+require base_path('views/pages/about.php');

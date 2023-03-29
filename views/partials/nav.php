@@ -8,13 +8,13 @@
 				<div class="hidden md:block">
 					<div class="ml-10 flex items-baseline space-x-4">
 						<!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-						<a href="/" class="<?= ($uri === '/' ? 'bg-gray-900 text-white' : 'text-gray-300') ?> rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Dashboard</a>
+						<a href="/" class="<?= (url_path() === '/' ? 'bg-gray-900 text-white' : 'text-gray-300') ?> rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Dashboard</a>
 
-						<a href="/posts" class="<?= ($uri === '/posts' ? 'bg-gray-900 text-white' : 'text-gray-300') ?> rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Posts</a>
+						<a href="/posts" class="<?= (url_path() === '/posts' ? 'bg-gray-900 text-white' : 'text-gray-300') ?> rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Posts</a>
 
-						<a href="/about" class="<?= ($uri === '/about' ? 'bg-gray-900 text-white' : 'text-gray-300') ?> hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About</a>
+						<a href="/about" class="<?= (url_path() === '/about' ? 'bg-gray-900 text-white' : 'text-gray-300') ?> hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About</a>
 
-						<a href="/contact" class="<?= ($uri === '/contact' ? 'bg-gray-900 text-white' : 'text-gray-300') ?> hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contact</a>
+						<a href="/contact" class="<?= (url_path() === '/contact' ? 'bg-gray-900 text-white' : 'text-gray-300') ?> hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contact</a>
 					</div>
 				</div>
 			</div>
