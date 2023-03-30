@@ -1,5 +1,7 @@
 <?php
 
+use Core\Response;
+
 function dd($var) {
 	echo "<pre>";
 	var_dump($var);
@@ -29,5 +31,12 @@ function base_path($uri)
 function redirect($url)
 {
 	header('Location:'. $url);
+	die();
+}
+
+function abort($responseCode = \Core\Response::NOT_FOUND) {
+	http_response_code($responseCode);
+
+	require base_path("views/$responseCode.php");
 	die();
 }

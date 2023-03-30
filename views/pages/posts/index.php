@@ -7,7 +7,7 @@
 		<ul>
 
 		<?php foreach ($posts as $post) : ?>
-		<li class="mb-5 hover:underline text-blue-500 text-lg"><a href="/posts?id=<?= $post['id'] ?>"><?= $post['title'] ?></a></li>
+		<li class="mb-5 hover:underline text-blue-500 text-lg"><a href="/post?id=<?= $post['id'] ?>"><?= $post['title'] ?></a></li>
 		<?php endforeach; ?>
 
 		</ul>

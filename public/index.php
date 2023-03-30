@@ -9,8 +9,11 @@ spl_autoload_register(function ($class) {
 
 
 include base_path("Core/Response.php");
-include base_path("Core/router.php");
+//include base_path("Core/router.php");
 
+$router = new \Core\Router();
+include base_path("Core/routes.php");
+$router->init();
 
 
 
