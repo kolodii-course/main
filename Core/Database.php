@@ -9,11 +9,8 @@ class Database
 	private PDO $connection;
 	private $statement;
 
-	public function __construct()
+	public function __construct($dbConfig)
 	{
-		$config = require ('config.php');
-		$dbConfig = $config['database'];
-
 		$dsn = 'mysql:' . http_build_query($dbConfig, '', ';');
 
 		$this->connection = new PDO($dsn, $dbConfig['user'], $dbConfig['password'], [

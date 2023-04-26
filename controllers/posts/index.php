@@ -7,7 +7,7 @@ use Core\Database;
 
 $header = 'My posts';
 
-$db = new Database();
+$db = resolve(Database::class);
 
 // show list of posts
 $posts = $db->query('select * from posts')->fetchAll();

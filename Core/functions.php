@@ -40,3 +40,11 @@ function abort($responseCode = \Core\Response::NOT_FOUND) {
 	require base_path("views/$responseCode.php");
 	die();
 }
+
+function user() {
+	return $_SESSION['user'] ?? null;
+}
+
+function resolve(string $class) {
+	return App::resolve($class);
+}

@@ -12,6 +12,11 @@ $router->get('/about', 'controllers/about.php')
 	->delete('/post', 'controllers/posts/destroy.php')
 	->get('/post/edit', 'controllers/posts/edit.php')
 	->put('/post', 'controllers/posts/update.php')
+	->get('/register', 'controllers/register/create.php')
+	->post('/register', 'controllers/register/store.php')
+	->get('/signin', 'controllers/signin/create.php')
+	->post('/signin', 'controllers/signin/store.php')
+	->get('/logout', 'controllers/signin/destroy.php')
 ;
 
 //return [
