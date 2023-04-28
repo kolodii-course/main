@@ -1,5 +1,6 @@
 <?php
 
+use Core\App;
 use Core\Response;
 
 function dd($var) {

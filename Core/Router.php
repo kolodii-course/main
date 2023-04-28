@@ -2,6 +2,8 @@
 
 namespace Core;
 
+use Core\Middleware\Authenticated;
+
 class Router {
 	private array $routes = [];
 
@@ -20,6 +22,11 @@ class Router {
 
 		foreach ($this->routes as $route) {
 			if ($route['method'] === $method && $route['uri'] === $path) {
+
+				if ($route['middleware']) {
+					$this->applyMiddleware($route['middleware']);
+				}
+
 				require base_path($route['controller']);
 
 				$notFound = false;
@@ -33,12 +40,20 @@ class Router {
 		}
 	}
 
-	public function get(string $uri, string $controller)
+	private function applyMiddleware(array $middlewares)
+	{
+		foreach ($middlewares as $middleware) {
+			(new $middleware())->handle();
+		}
+	}
+
+	public function get(string $uri, string $controller, array $middleware = [])
 	{
 		$this->routes[] = [
 			'uri' => $uri,
 			'controller' => $controller,
-			'method' => Method::GET->value
+			'method' => Method::GET->value,
+			'middleware' => $middleware
 		];
 
 		return $this;

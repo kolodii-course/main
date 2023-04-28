@@ -5,7 +5,7 @@ $router = new \Core\Router();
 $router->get('/about', 'controllers/about.php')
 	->get('/contact', 'controllers/contact.php')
 	->get('/', 'controllers/index.php')
-	->get('/posts', 'controllers/posts/index.php')
+	->get('/posts', 'controllers/posts/index.php', [\Core\Middleware\Authenticated::class])
 	->get('/post', 'controllers/posts/view.php')
 	->get('/posts/create', 'controllers/posts/create.php')
 	->post('/posts/store', 'controllers/posts/store.php')
